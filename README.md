@@ -8,8 +8,8 @@ Iz glavnog foldera projekta kopirati početnu stranicu i folder sa slikama:
 
 ```bash
 mkdir -p /home/krle/html/crnakobra
-cp -r index.html slike /home/krle/html/crnakobra/
-```
+cp -r index.html slike 'Rekreativna setnja' /home/krle/html/blackcobraacademy/
+cp -r index.html slike /home/krle/html/blackcobraacademy/
 
 Nakon kopiranja struktura na serveru treba da bude:
 
