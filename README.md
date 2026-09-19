@@ -7,19 +7,26 @@ Statična prezentacija za Black Cobra Academy.
 Iz glavnog foldera projekta kopirati početnu stranicu i folder sa slikama:
 
 ```bash
-mkdir -p /home/krle/html/crnakobra
+mkdir -p /home/krle/html/blackcobraacademy
 cp -r index.html slike 'Rekreativna setnja' /home/krle/html/blackcobraacademy/
-cp -r index.html slike /home/krle/html/blackcobraacademy/
+# Ako se kopiraju samo izmene za Zumba sekciju:
+cp -r slike/Zumba /home/krle/html/blackcobraacademy/slike/
+```
 
 Nakon kopiranja struktura na serveru treba da bude:
 
 ```text
-/home/krle/html/crnakobra/
+/home/krle/html/blackcobraacademy/
 ├── index.html
 └── slike/
-    └── pocetak/
-        └── fotografije
+    ├── pocetak/
+    │   └── fotografije
+    └── Zumba/
+        ├── fotografije
+        └── video-snimci
 ```
+
+Folder `slike/Zumba` je obavezan jer ga koristi nova Zumba sekcija na stranici.
 
 U Nginx konfiguraciji postaviti root folder sajta:
 
@@ -28,7 +35,7 @@ server {
     listen 80;
     server_name blackcobraacademy.com www.blackcobraacademy.com;
 
-    root /home/krle/html/crnakobra;
+    root /home/krle/html/blackcobraacademy;
     index index.html;
 
     location / {
