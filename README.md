@@ -11,6 +11,8 @@ mkdir -p /home/krle/html/blackcobraacademy
 cp -r index.html slike 'Rekreativna setnja' /home/krle/html/blackcobraacademy/
 # Ako se kopiraju samo izmene za Zumba sekciju:
 cp -r slike/Zumba /home/krle/html/blackcobraacademy/slike/
+ovo je glavno
+cp index.html /home/krle/html/blackcobraacademy/index.html
 ```
 
 Nakon kopiranja struktura na serveru treba da bude:
