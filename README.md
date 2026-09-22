@@ -14,6 +14,8 @@ cp -r slike/Zumba /home/krle/html/blackcobraacademy/slike/
 ovo je glavno
 cp index.html /home/krle/html/blackcobraacademy/index.html
 ```
+citanje metrike, vaznoo!!!
+curl -s http://localhost:9105/metrics | grep blackcobraacademy
 
 Nakon kopiranja struktura na serveru treba da bude:
 
