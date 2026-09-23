@@ -13,6 +13,9 @@ cp -r index.html slike 'Rekreativna setnja' /home/krle/html/blackcobraacademy/
 cp -r slike/Zumba /home/krle/html/blackcobraacademy/slike/
 ovo je glavno
 cp index.html /home/krle/html/blackcobraacademy/index.html
+kad je dodata zumba 
+cp index.html robots.txt sitemap.xml zumba-u-pirotu.html /home/krle/html/blackcobraacademy/
+
 ```
 citanje metrike, vaznoo!!!
 curl -s http://localhost:9105/metrics | grep blackcobraacademy
