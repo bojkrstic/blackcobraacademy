@@ -4,36 +4,48 @@ Statična prezentacija za Black Cobra Academy.
 
 ## Postavljanje na server
 
-Iz glavnog foldera projekta kopirati početnu stranicu i folder sa slikama:
+Iz glavnog foldera projekta kopirati sve HTML stranice, `robots.txt`, `sitemap.xml` i foldere sa slikama:
 
 ```bash
 mkdir -p /home/krle/html/blackcobraacademy
-cp -r index.html slike 'Rekreativna setnja' /home/krle/html/blackcobraacademy/
-# Ako se kopiraju samo izmene za Zumba sekciju:
-cp -r slike/Zumba /home/krle/html/blackcobraacademy/slike/
-ovo je glavno
-cp index.html /home/krle/html/blackcobraacademy/index.html
-kad je dodata zumba 
-cp index.html robots.txt sitemap.xml zumba-u-pirotu.html /home/krle/html/blackcobraacademy/
-
+cp -r *.html robots.txt sitemap.xml slike 'Rekreativna setnja' /home/krle/html/blackcobraacademy/
 ```
-citanje metrike, vaznoo!!!
+
+Ako su menjane samo stranice (bez novih slika i videa):
+
+```bash
+cp *.html robots.txt sitemap.xml /home/krle/html/blackcobraacademy/
+```
+
+Čitanje metrike (važno!):
+
+```bash
 curl -s http://localhost:9105/metrics | grep blackcobraacademy
+```
 
 Nakon kopiranja struktura na serveru treba da bude:
 
 ```text
 /home/krle/html/blackcobraacademy/
 ├── index.html
+├── zumba-u-pirotu.html, tai-bo-u-pirotu.html, pilates-u-pirotu.html, ...
+├── robots.txt
+├── sitemap.xml
+├── Rekreativna setnja/
+│   └── slike/
 └── slike/
+    ├── logo-black-cobra-academy.jpg
     ├── pocetak/
-    │   └── fotografije
-    └── Zumba/
-        ├── fotografije
-        └── video-snimci
+    ├── Zumba/
+    ├── Kangoo Jumps/
+    ├── Tai Bo/
+    ├── Pilates/
+    ├── Funkcionalni trening/
+    ├── Akva/
+    └── Fit Fest/
 ```
 
-Folder `slike/Zumba` je obavezan jer ga koristi nova Zumba sekcija na stranici.
+Kada se doda nova stranica, dodati je i u `sitemap.xml`.
 
 U Nginx konfiguraciji postaviti root folder sajta:
 
